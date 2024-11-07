@@ -1,12 +1,15 @@
-# Use Maven image to build the project
-FROM maven:3.8.4-openjdk-17 AS build
-WORKDIR /app
-COPY springboot-backend /app
-RUN mvn clean package -DskipTests
+# Use OpenJDK 17 as the base image
+FROM openjdk:17 
+LABEL "Project"="Java Application"
 
-# Use JDK image to run the application
-FROM openjdk:17-jdk-slim
+# Set the working directory
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+
+# Copy the WAR file from the target directory
+COPY target/HostBuddy-RESTapi-CRUD-0.0.1-SNAPSHOT.war .
+
+# Expose the application port
 EXPOSE 8085
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Command to run the application
+CMD ["java", "-jar", "HostBuddy-RESTapi-CRUD-0.0.1-SNAPSHOT.war"]
