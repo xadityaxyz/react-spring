@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const Item_Base_URL = "http://localhost:8080/items";
+const Item_Base_URL = "http://3.110.133.63:8085/items";
 
 class ItemService {
 
