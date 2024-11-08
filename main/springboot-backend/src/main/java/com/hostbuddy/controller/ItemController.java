@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hostbuddy.dto.Item;
 import com.hostbuddy.service.ItemServiceImp;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://3.110.133.63:3000")
 @RestController
 public class ItemController {
 	
