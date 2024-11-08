@@ -1,5 +1,5 @@
 # Use OpenJDK 17 as the base image
-FROM openjdk:17 
+FROM openjdk:17
 LABEL "Project"="Java Application"
 
 # Set the working directory
